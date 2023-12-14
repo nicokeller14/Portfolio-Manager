@@ -20,6 +20,7 @@ public class Stock {
     private String companyName;
     private int quantity;
     private double purchasePrice;
+    private String purchaseDate;
     private double currentPrice;
     private String sector;
 

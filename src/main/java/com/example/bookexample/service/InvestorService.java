@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public interface InvestorService {
     ArrayList<Investor> findAllInvestors();
-    Book findInvestorById(long investorId);
+    Stock findInvestorById(long investorId);
     void addInvestor(Investor i);
     void updateInvestor (Investor i);
     void deleteInvestor(Investor i);

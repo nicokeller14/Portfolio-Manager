@@ -44,7 +44,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public void deleteBook(Book b) {
         Book deleteBook = null;
-        for (Book book : bookList) {
+        for (Book book : stockList) {
             if (book.getNumber() == b.getNumber()) {
                 deleteBook = b;
             }
