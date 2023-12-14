@@ -7,5 +7,4 @@ public interface BookRepository extends CrudRepository<Book, Long> {
     Book findByName(String name);
     Book findByNumber(long number);
 
-
 }
