@@ -1,0 +1,17 @@
+{
+  "frontendFolder": "/Users/nicolaskeller/Library/Mobile Documents/com~apple~CloudDocs/UNI/Semester 3/Design of Software Systems/Lectures/Lecture 10/book-example-complete/./frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "/Users/nicolaskeller/Library/Mobile Documents/com~apple~CloudDocs/UNI/Semester 3/Design of Software Systems/Lectures/Lecture 10/book-example-complete/./frontend/generated/jar-resources",
+  "staticOutput": "/Users/nicolaskeller/Library/Mobile Documents/com~apple~CloudDocs/UNI/Semester 3/Design of Software Systems/Lectures/Lecture 10/book-example-complete/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "/Users/nicolaskeller/Library/Mobile Documents/com~apple~CloudDocs/UNI/Semester 3/Design of Software Systems/Lectures/Lecture 10/book-example-complete/target/classes/META-INF/VAADIN/config",
+  "frontendBundleOutput": "/Users/nicolaskeller/Library/Mobile Documents/com~apple~CloudDocs/UNI/Semester 3/Design of Software Systems/Lectures/Lecture 10/book-example-complete/target/classes/META-INF/VAADIN/webapp",
+  "devBundleOutput": "/Users/nicolaskeller/Library/Mobile Documents/com~apple~CloudDocs/UNI/Semester 3/Design of Software Systems/Lectures/Lecture 10/book-example-complete/src/main/dev-bundle/webapp",
+  "devBundleStatsOutput": "/Users/nicolaskeller/Library/Mobile Documents/com~apple~CloudDocs/UNI/Semester 3/Design of Software Systems/Lectures/Lecture 10/book-example-complete/src/main/dev-bundle/config",
+  "jarResourcesFolder": "/Users/nicolaskeller/Library/Mobile Documents/com~apple~CloudDocs/UNI/Semester 3/Design of Software Systems/Lectures/Lecture 10/book-example-complete/./frontend/generated/jar-resources",
+  "themeName": "",
+  "clientServiceWorkerSource": "/Users/nicolaskeller/Library/Mobile Documents/com~apple~CloudDocs/UNI/Semester 3/Design of Software Systems/Lectures/Lecture 10/book-example-complete/target/sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}
