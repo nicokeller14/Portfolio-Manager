@@ -1,45 +1,40 @@
 package com.example.bookexample.presentation;
 
-import com.example.bookexample.model.*;
-import com.example.bookexample.service.BookService;
+import com.example.bookexample.model.Investor;
 import com.example.bookexample.service.InvestorService;
-import com.vaadin.flow.spring.annotation.SpringComponent;
 import org.vaadin.crudui.crud.CrudListener;
-
 import java.util.Collection;
 import java.util.List;
+import com.vaadin.flow.spring.annotation.SpringComponent;
 
 @SpringComponent
-public class InvestorCrudListener implements CrudListener {
+public class InvestorCrudListener implements CrudListener<Investor> {
 
     private final InvestorService investorService;
+
     public InvestorCrudListener(InvestorService investorService) {
         this.investorService = investorService;
     }
 
     @Override
-    public Collection findAll() {
-        List<Investor> investors = investorService.findAllInvestors();
-        return investors;
+    public Collection<Investor> findAll() {
+        return investorService.findAllInvestors();
     }
 
     @Override
-    public Object add(Object o) {
-        Investor i = (Investor) o;
-        investorService.addInvestor(i);
-        return i;
+    public Investor add(Investor investor) {
+        investorService.addInvestor(investor);
+        return investor;
     }
 
     @Override
-    public Object update(Object o) {
-        Investor i = (Investor) o;
-        InvestorService.updateInvestor(i);
-        return i;
+    public Investor update(Investor investor) {
+        investorService.updateInvestor(investor);
+        return investor;
     }
 
     @Override
-    public void delete(Object o) {
-        Investor i = (Investor)o;
-        InvestorService.deleteInvestorById(i.getInvestorId());
+    public void delete(Investor investor) {
+        investorService.deleteInvestorById(investor.getInvestorId());
     }
 }
