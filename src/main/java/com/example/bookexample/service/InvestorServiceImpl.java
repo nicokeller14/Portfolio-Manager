@@ -1,8 +1,6 @@
 package com.example.bookexample.service;
 
-import com.example.bookexample.model.Book;
 import com.example.bookexample.model.Investor;
-import com.example.bookexample.repository.BookRepository;
 import com.example.bookexample.repository.InvestorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -66,6 +64,10 @@ public class InvestorServiceImpl implements InvestorService {
             if (investor.getInvestorId() == i.getInvestorId()) {
                 investor.setFirstName(i.getFirstName());
                 investor.setLastName(i.getLastName());
+                investor.setCity(i.getCity());
+                investor.setCountry(i.getCountry());
+                investor.setEmail(i.getEmail());
+                investor.setTimeZone(i.getTimeZone());
                 investorRepository.save(investor);
             }
         }
