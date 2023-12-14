@@ -1,26 +1,29 @@
 package com.example.bookexample.presentation;
 
-import com.example.bookexample.model.Book;
-import com.example.bookexample.service.BookService;
+import com.example.bookexample.model.Investor;
+import com.example.bookexample.model.Stock;
+import com.example.bookexample.service.InvestorService;
+import com.example.bookexample.service.StockService;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.vaadin.crudui.crud.impl.GridCrud;
 
-
-@Route("books")
+@Route("")
 public class MainView extends VerticalLayout {
 
-    @Autowired
-    public MainView(BookService bookService) {
+    private final InvestorService investorService;
+    private final StockService stockService;
 
-        removeAll();
+    public MainView(InvestorService investorService, StockService stockService) {
+        this.investorService = investorService;
+        this.stockService = stockService;
 
-        GridCrud<Book> bookGridCrud = new GridCrud<>(Book.class);
-        bookGridCrud.setCrudListener(new BookCrudListener(bookService));
+        GridCrud<Investor> crudInvestor = new GridCrud<>(Investor.class);
+        crudInvestor.setCrudListener(new InvestorCrudListener(investorService));
+        add(crudInvestor);
 
-        add(bookGridCrud);
-
+        GridCrud<Stock> crudStock = new GridCrud<>(Stock.class);
+        crudStock.setCrudListener(new StockCrudListener(stockService));
+        add(crudStock);
     }
-
 }
