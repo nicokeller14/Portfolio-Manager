@@ -22,8 +22,8 @@ public class MainView extends VerticalLayout {
         crudInvestor.setCrudListener(new InvestorCrudListener(investorService));
         add(crudInvestor);
 
-        GridCrud<Stock> crudStock = new GridCrud<>(Stock.class);
-        crudStock.setCrudListener(new StockCrudListener(stockService));
-        add(crudStock);
+        //GridCrud<Stock> crudStock = new GridCrud<>(Stock.class);
+        //crudStock.setCrudListener(new StockCrudListener(stockService));
+        //add(crudStock);
     }
 }
