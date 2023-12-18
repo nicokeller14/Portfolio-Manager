@@ -2,10 +2,12 @@ package com.example.bookexample.presentation;
 
 import com.example.bookexample.model.Portfolio;
 import com.example.bookexample.service.PortfolioService;
+import com.vaadin.flow.spring.annotation.SpringComponent;
 import org.vaadin.crudui.crud.CrudListener;
 
 import java.util.Collection;
 
+@SpringComponent
 public class PortfolioCrudListener implements CrudListener<Portfolio> {
 
     private final PortfolioService portfolioService;

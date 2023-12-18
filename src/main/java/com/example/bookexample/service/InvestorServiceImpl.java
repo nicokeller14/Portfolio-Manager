@@ -1,13 +1,12 @@
 package com.example.bookexample.service;
-
 import com.example.bookexample.model.Investor;
 import com.example.bookexample.repository.InvestorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Transactional
 @Service("InvestorService")
@@ -27,8 +26,10 @@ public class InvestorServiceImpl implements InvestorService {
 
     @Override
     public Investor findInvestorById(long investorId) {
-        return investorRepository.findById(investorId);
+        Optional<Investor> investor = investorRepository.findById(investorId);
+        return investor.orElse(null);
     }
+
 
 
     @Override

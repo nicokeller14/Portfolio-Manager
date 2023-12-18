@@ -1,8 +1,6 @@
 package com.example.bookexample.model;
-
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.Set;
 
 @Getter

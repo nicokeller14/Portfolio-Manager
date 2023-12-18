@@ -4,10 +4,15 @@ import com.example.bookexample.model.Investor;
 import com.example.bookexample.model.Stock;
 import com.example.bookexample.service.InvestorService;
 import com.example.bookexample.service.StockService;
+import com.vaadin.flow.spring.annotation.SpringComponent;
+import org.springframework.stereotype.Component;
 import org.vaadin.crudui.crud.CrudListener;
 
 import java.util.Collection;
 
+
+
+@SpringComponent
 public class StockCrudListener implements CrudListener<Stock> {
 
 

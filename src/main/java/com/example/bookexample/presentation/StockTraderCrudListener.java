@@ -2,10 +2,13 @@ package com.example.bookexample.presentation;
 
 import com.example.bookexample.model.StockTrader;
 import com.example.bookexample.service.StockTraderService;
+import com.vaadin.flow.spring.annotation.SpringComponent;
 import org.vaadin.crudui.crud.CrudListener;
 
 import java.util.Collection;
 
+
+@SpringComponent
 public class StockTraderCrudListener implements CrudListener<StockTrader> {
 
     private final StockTraderService stockTraderService;
