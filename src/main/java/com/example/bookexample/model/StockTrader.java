@@ -15,5 +15,13 @@ public class StockTrader {
 
     @Id
     @GeneratedValue
-    private String tradeSymbol;
+    private long traderId;
+
+    private String traderName;
+    private String experienceLevel;
+    private String tradingStrategy;
+
+    @OneToMany(mappedBy = "stockTrader", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Portfolio> managedPortfolios;
+
 }

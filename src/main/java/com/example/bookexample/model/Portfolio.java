@@ -15,7 +15,7 @@ public class Portfolio {
 
     @Id
     @GeneratedValue
-    private long porfolioId;
+    private long portfolioId;
 
     private String openingDate;
     private String portfolioName;
@@ -34,4 +34,8 @@ public class Portfolio {
             inverseJoinColumns = { @JoinColumn(name = "stock_id") }
     )
     private Set<Stock> stocks;
+
+    @ManyToOne
+    @JoinColumn(name = "trader_id", nullable = false)
+    private StockTrader stockTrader;
 }

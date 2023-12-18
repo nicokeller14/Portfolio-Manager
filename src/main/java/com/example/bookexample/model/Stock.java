@@ -15,6 +15,7 @@ public class Stock {
 
     @Id
     @GeneratedValue
+    @Column(unique = true)
     private String tickerSymbol;
 
     private String companyName;
