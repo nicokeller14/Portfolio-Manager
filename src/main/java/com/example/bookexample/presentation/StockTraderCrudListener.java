@@ -1,6 +1,6 @@
 package com.example.bookexample.presentation;
 
-import com.example.bookexample.model.StockTrader;
+import com.example.bookexample.model.StockTrade;
 import com.example.bookexample.service.StockTraderService;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import org.vaadin.crudui.crud.CrudListener;
@@ -9,7 +9,7 @@ import java.util.Collection;
 
 
 @SpringComponent
-public class StockTraderCrudListener implements CrudListener<StockTrader> {
+public class StockTraderCrudListener implements CrudListener<StockTrade> {
 
     private final StockTraderService stockTraderService;
 
@@ -18,24 +18,24 @@ public class StockTraderCrudListener implements CrudListener<StockTrader> {
     }
 
     @Override
-    public Collection<StockTrader> findAll() {
+    public Collection<StockTrade> findAll() {
         return stockTraderService.findAllStockTraders();
     }
 
     @Override
-    public StockTrader add(StockTrader stockTrader) {
+    public StockTrade add(StockTrade stockTrader) {
         stockTraderService.addStockTrader(stockTrader);
         return stockTrader;
     }
 
     @Override
-    public StockTrader update(StockTrader stockTrader) {
+    public StockTrade update(StockTrade stockTrader) {
         stockTraderService.updateStockTrader(stockTrader);
         return stockTrader;
     }
 
     @Override
-    public void delete(StockTrader stockTrader) {
+    public void delete(StockTrade stockTrader) {
         stockTraderService.deleteStockTraderById(stockTrader.getTraderId());
     }
 }

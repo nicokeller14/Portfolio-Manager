@@ -1,6 +1,6 @@
 package com.example.bookexample.service;
 
-import com.example.bookexample.model.StockTrader;
+import com.example.bookexample.model.StockTrade;
 import com.example.bookexample.repository.StockTraderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,23 +19,23 @@ public class StockTraderServiceImpl implements StockTraderService {
     }
 
     @Override
-    public StockTrader findStockTraderById(long traderId) {
-        Optional<StockTrader> stockTrader = stockTraderRepository.findById(traderId);
+    public StockTrade findStockTraderById(long traderId) {
+        Optional<StockTrade> stockTrader = stockTraderRepository.findById(traderId);
         return stockTrader.orElseThrow(() -> new RuntimeException("StockTrader not found"));
     }
 
     @Override
-    public List<StockTrader> findAllStockTraders() {
-        return (List<StockTrader>) stockTraderRepository.findAll();
+    public List<StockTrade> findAllStockTraders() {
+        return (List<StockTrade>) stockTraderRepository.findAll();
     }
 
     @Override
-    public void addStockTrader(StockTrader stockTrader) {
+    public void addStockTrader(StockTrade stockTrader) {
         stockTraderRepository.save(stockTrader);
     }
 
     @Override
-    public void updateStockTrader(StockTrader stockTrader) {
+    public void updateStockTrader(StockTrade stockTrader) {
         if (!stockTraderRepository.existsById(stockTrader.getTraderId())) {
             throw new RuntimeException("StockTrader not found");
         }

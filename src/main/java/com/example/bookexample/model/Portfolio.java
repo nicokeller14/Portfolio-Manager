@@ -10,32 +10,33 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 
-@Entity
+@Entity(name = "Portfolio")
+@Table(name = "portfolio")
 public class Portfolio {
 
     @Id
     @GeneratedValue
-    private long portfolioId;
+    private long porfolioId;
 
+    @Column
     private String openingDate;
+
+    @Column
     private String portfolioName;
+
+    @Column
     private String investmentStrategy;
+
+    @Column
     private float investmentAmount;
+
+    @Column
     private String investmentCurrency;
 
     @ManyToOne
-    @JoinColumn(name = "investor_id", nullable = false)
+    @JoinColumn(name = "investorId", nullable = false)
     private Investor investor;
 
-    @ManyToMany(cascade = { CascadeType.ALL })
-    @JoinTable(
-            name = "Portfolio_Stock",
-            joinColumns = { @JoinColumn(name = "portfolio_id") },
-            inverseJoinColumns = { @JoinColumn(name = "stock_id") }
-    )
-    private Set<Stock> stocks;
-
-    @ManyToOne
-    @JoinColumn(name = "trader_id", nullable = false)
-    private StockTrader stockTrader;
+    @OneToMany(mappedBy = "portfolio", cascade = CascadeType.ALL)
+    private Set<StockTrade> stockTransactions;
 }

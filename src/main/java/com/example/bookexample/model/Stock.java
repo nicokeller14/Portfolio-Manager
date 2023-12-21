@@ -15,16 +15,20 @@ public class Stock {
 
     @Id
     @GeneratedValue
-    @Column(unique = true)
     private String tickerSymbol;
 
+    @Column
     private String companyName;
-    private int quantity;
-    private double purchasePrice;
-    private String purchaseDate;
+
+    @Column
     private double currentPrice;
+
+    @Column
     private String sector;
 
     @ManyToMany(mappedBy = "stocks")
     private Set<Portfolio> portfolios;
+
+    @OneToMany(mappedBy = "stock", cascade = CascadeType.ALL)
+    private Set<StockTrade> stockTransactions;
 }
