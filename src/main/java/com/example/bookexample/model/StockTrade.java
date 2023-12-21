@@ -32,6 +32,6 @@ public class StockTrade {
     private Portfolio portfolio;
 
     @ManyToOne
-    @JoinColumn(name = "stockId", nullable = false)
+    @JoinColumn(name = "tickerSymbol", nullable = false)
     private Stock stock;
 }

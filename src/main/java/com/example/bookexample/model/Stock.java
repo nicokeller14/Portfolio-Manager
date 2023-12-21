@@ -1,6 +1,7 @@
 package com.example.bookexample.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.Set;
@@ -14,7 +15,7 @@ import java.util.Set;
 public class Stock {
 
     @Id
-    @GeneratedValue
+    @NotNull
     private String tickerSymbol;
 
     @Column
