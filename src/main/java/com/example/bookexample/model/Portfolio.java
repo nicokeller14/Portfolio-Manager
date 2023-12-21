@@ -16,7 +16,7 @@ public class Portfolio {
 
     @Id
     @GeneratedValue
-    private long porfolioId;
+    private long portfolioId;
 
     @Column
     private String openingDate;
