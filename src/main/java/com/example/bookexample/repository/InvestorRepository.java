@@ -9,4 +9,7 @@ public interface InvestorRepository extends CrudRepository<Investor, Long> {
     List<Investor> findByFirstName(String firstName);
     List<Investor> findByLastName(String lastName);
 
+    Investor findByInvestorId(long id);
+    Investor findByEmail(String email);
+    List<Investor> findByCity(String city);
 }

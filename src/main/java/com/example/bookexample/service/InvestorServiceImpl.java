@@ -18,16 +18,23 @@ public class InvestorServiceImpl implements InvestorService {
     ArrayList<Investor> investorList = new ArrayList<>();
     @Override
     public List<Investor> findAllInvestors() {
-        Iterable<Investor> iterable = investorRepository.findAll();
-        List<Investor> list = new ArrayList<>();
-        iterable.forEach(list::add);
-        return list;
+        ArrayList<Investor> investorRepo = (ArrayList<Investor>) investorRepository.findAll();
+        if (investorRepo.isEmpty())
+            return investorList;
+        else
+            return investorRepo;
     }
 
     @Override
-    public Investor findInvestorById(long investorId) {
-        Optional<Investor> investor = investorRepository.findById(investorId);
-        return investor.orElse(null);
+    public Investor findInvestorById(long id) {
+
+        return findInvestorById(id);
+    }
+
+    @Override
+    public Investor findInvestorByEmail(String email) {
+
+        return investorRepository.findByEmail(email);
     }
 
 
@@ -44,11 +51,27 @@ public class InvestorServiceImpl implements InvestorService {
     }
 
     @Override
+    public void deleteInvestor(Investor i) {
+        Investor deleteInvestor = null;
+        for (Investor investor : investorList) {
+            if (i.getInvestorId() == investor.getInvestorId()) {
+                deleteInvestor = i;
+            }
+        }
+
+        if (deleteInvestor != null) {
+            investorList.remove(deleteInvestor);
+            investorRepository.delete(deleteInvestor);
+
+        }
+    }
+
+    @Override
     public void deleteInvestorById(long id) {
         Investor deleteInvestor = null;
-        for (Investor i : investorList) {
-            if (i.getInvestorId() == id) {
-                deleteInvestor = i;
+        for (Investor investor : investorList) {
+            if (id == investor.getInvestorId()) {
+                deleteInvestor = investor;
             }
         }
 
@@ -65,9 +88,9 @@ public class InvestorServiceImpl implements InvestorService {
             if (investor.getInvestorId() == i.getInvestorId()) {
                 investor.setFirstName(i.getFirstName());
                 investor.setLastName(i.getLastName());
+                investor.setEmail(i.getEmail());
                 investor.setCity(i.getCity());
                 investor.setCountry(i.getCountry());
-                investor.setEmail(i.getEmail());
                 investor.setTimeZone(i.getTimeZone());
                 investorRepository.save(investor);
             }
