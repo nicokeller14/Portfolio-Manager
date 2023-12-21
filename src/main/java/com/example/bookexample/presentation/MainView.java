@@ -19,13 +19,13 @@ public class MainView extends VerticalLayout {
     private final InvestorCrudListener investorCrudListener;
     private final StockCrudListener stockCrudListener;
     private final PortfolioCrudListener portfolioCrudListener;
-    private final StockTraderCrudListener stockTraderCrudListener;
+    private final StockTradeCrudListener stockTraderCrudListener;
 
     @Autowired
     public MainView(InvestorCrudListener investorCrudListener,
                     StockCrudListener stockCrudListener,
                     PortfolioCrudListener portfolioCrudListener,
-                    StockTraderCrudListener stockTraderCrudListener) {
+                    StockTradeCrudListener stockTraderCrudListener) {
         this.investorCrudListener = investorCrudListener;
         this.stockCrudListener = stockCrudListener;
         this.portfolioCrudListener = portfolioCrudListener;

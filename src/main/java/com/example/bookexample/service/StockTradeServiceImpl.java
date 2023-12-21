@@ -1,7 +1,7 @@
 package com.example.bookexample.service;
 
 import com.example.bookexample.model.StockTrade;
-import com.example.bookexample.repository.StockTraderRepository;
+import com.example.bookexample.repository.StockTradeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,12 +9,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class StockTraderServiceImpl implements StockTraderService {
+public class StockTradeServiceImpl implements StockTradeService {
 
-    private final StockTraderRepository stockTraderRepository;
+    private final StockTradeRepository stockTraderRepository;
 
     @Autowired
-    public StockTraderServiceImpl(StockTraderRepository stockTraderRepository) {
+    public StockTradeServiceImpl(StockTradeRepository stockTraderRepository) {
         this.stockTraderRepository = stockTraderRepository;
     }
 
@@ -36,7 +36,7 @@ public class StockTraderServiceImpl implements StockTraderService {
 
     @Override
     public void updateStockTrader(StockTrade stockTrader) {
-        if (!stockTraderRepository.existsById(stockTrader.getTraderId())) {
+        if (!stockTraderRepository.existsById(stockTrader.getTransactionId())) {
             throw new RuntimeException("StockTrader not found");
         }
         stockTraderRepository.save(stockTrader);

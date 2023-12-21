@@ -4,7 +4,7 @@ import com.example.bookexample.model.StockTrade;
 
 import java.util.List;
 
-public interface StockTraderService {
+public interface StockTradeService {
     StockTrade findStockTraderById(long traderId);
     List<StockTrade> findAllStockTraders();
     void addStockTrader(StockTrade stockTrader);
