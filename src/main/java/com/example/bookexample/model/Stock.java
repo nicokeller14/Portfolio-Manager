@@ -27,6 +27,8 @@ public class Stock {
     @Column
     private String sector;
 
+    private long purchaseDate;
+
     @OneToMany(mappedBy = "stock", cascade = CascadeType.ALL)
     private Set<StockTrade> stockTransactions;
 }
