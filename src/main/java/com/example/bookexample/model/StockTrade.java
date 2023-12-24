@@ -25,7 +25,8 @@ public class StockTrade {
     private int transactionAmount;
 
     @Column
-    private Date date; // may need to change this to a string
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date date;
 
     @ManyToOne
     @JoinColumn(name = "portfolioId", nullable = false)
@@ -34,4 +35,5 @@ public class StockTrade {
     @ManyToOne
     @JoinColumn(name = "tickerSymbol", nullable = false)
     private Stock stock;
+
 }

@@ -36,7 +36,7 @@ public class Investor {
         @Column
         private String timeZone;
 
-        @OneToMany(mappedBy = "investor", cascade = CascadeType.ALL, orphanRemoval = true)
-        @JoinColumn(name = "investorId")
+        @OneToMany(mappedBy = "investor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
         private Set<Portfolio> portfolios;
+
 }

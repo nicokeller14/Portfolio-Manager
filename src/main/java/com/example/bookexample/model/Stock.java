@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -15,7 +16,6 @@ import java.util.Set;
 public class Stock {
 
     @Id
-    @NotNull
     private String tickerSymbol;
 
     @Column
@@ -28,6 +28,12 @@ public class Stock {
     private String sector;
 
     private long purchaseDate;
+
+    private long purchasePrice;
+
+    // Fix the mappedBy attribute to point to the correct property in the Portfolio entity
+    @ManyToMany(mappedBy = "stocks", cascade = CascadeType.ALL)
+    private List<Portfolio> portfolios;
 
     @OneToMany(mappedBy = "stock", cascade = CascadeType.ALL)
     private Set<StockTrade> stockTransactions;
