@@ -78,8 +78,6 @@ public class StockServiceImpl implements StockService {
         for (Stock stock : stockList) {
             if (stock.getTickerSymbol() == s.getTickerSymbol()) {
                 stock.setCompanyName(s.getCompanyName());
-                stock.setPurchasePrice(s.getPurchasePrice());
-                stock.setPurchaseDate(s.getPurchaseDate());
                 stock.setCurrentPrice(s.getCurrentPrice());
                 stock.setSector(s.getSector());
                 stock.setPortfolios(s.getPortfolios());

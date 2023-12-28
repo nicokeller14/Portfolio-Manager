@@ -27,10 +27,6 @@ public class Stock {
     @Column
     private String sector;
 
-    private long purchaseDate;
-
-    private long purchasePrice;
-
     // Fix the mappedBy attribute to point to the correct property in the Portfolio entity
     @ManyToMany(mappedBy = "stocks", cascade = CascadeType.ALL)
     private List<Portfolio> portfolios;

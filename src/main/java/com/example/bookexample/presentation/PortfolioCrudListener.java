@@ -37,4 +37,6 @@ public class PortfolioCrudListener implements CrudListener<Portfolio> {
     public void delete(Portfolio portfolio) {
         portfolioService.deletePortfolioById(portfolio.getPortfolioId());
     }
+
+
 }
