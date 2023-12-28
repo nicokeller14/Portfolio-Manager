@@ -25,7 +25,7 @@ public class StockTrade {
     private int transactionAmount;
 
     @Column
-    private Date date; // may need to change this to a string
+    private Date date; // may need to change this to a string, check later
 
     @ManyToOne
     @JoinColumn(name = "portfolioId", nullable = false)
